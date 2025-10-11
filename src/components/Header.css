@@ -1,0 +1,132 @@
+/* === HEADER STYLING === */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 18px 40px;
+  background: rgba(10, 15, 31, 0.4);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+  transition: background 0.3s ease, padding 0.3s ease;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+/* === Logo === */
+.logo h1 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #00ffff, #007bff, #6b5bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  position: relative;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+  white-space: nowrap;
+}
+
+.logo h1:hover {
+  transform: scale(1.08);
+  text-shadow: 0 0 20px rgba(0, 255, 255, 0.6), 0 0 40px rgba(0, 123, 255, 0.5);
+}
+
+/* === Navigation Buttons === */
+.buttons {
+  display: flex;
+  gap: 35px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 100%;
+  font-family: "Poppins", sans-serif;
+}
+
+.buttons a {
+  position: relative;
+  color: #c8d4ff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.buttons a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #00ffff, #007bff);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.buttons a:hover {
+  color: #00ffff;
+}
+
+.buttons a:hover::after {
+  width: 100%;
+}
+
+/* === Scroll Animation === */
+.header.scrolled {
+  background: rgba(10, 15, 31, 0.85);
+  padding: 10px 30px;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+/* === Responsive Layout === */
+@media (max-width: 900px) {
+  .header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px;
+    gap: 10px;
+  }
+
+  .logo h1 {
+    font-size: 1.6rem;
+  }
+
+  .buttons {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .buttons a {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .header {
+    padding: 10px 10px;
+  }
+
+  .buttons {
+    gap: 12px;
+  }
+
+  .buttons a {
+    font-size: 0.85rem;
+  }
+
+  .logo h1 {
+    font-size: 1.3rem;
+  }
+}

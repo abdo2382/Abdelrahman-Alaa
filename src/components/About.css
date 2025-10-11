@@ -1,0 +1,211 @@
+.about-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(circle at 30% 20%, #0a0f1f, #050811 80%);
+  color: #cdd6f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 4rem 2rem;
+  z-index: 1;
+  margin: 0; /* remove unwanted top space */
+}
+
+/* === Glowing background elements === */
+.bg-element {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.4;
+  animation: float 10s ease-in-out infinite alternate;
+}
+.bg-element.cyan {
+  background: #00ffff;
+  top: 10%;
+  left: 15%;
+}
+.bg-element.blue {
+  background: #007bff;
+  bottom: 15%;
+  right: 10%;
+}
+.bg-element.purple {
+  background: #6b5bff;
+  top: 40%;
+  right: 30%;
+}
+
+@keyframes float {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-25px);
+  }
+}
+
+/* === Grid overlay === */
+.grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* === Titles === */
+.about-title {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #00ffff, #007bff, #6b5bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+  z-index: 2;
+  text-align: center;
+}
+
+.about-text {
+  max-width: 800px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #a5baff;
+  margin-bottom: 3rem;
+  z-index: 2;
+  line-height: 1.6;
+}
+
+/* === Skills Grid === */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.8rem;
+  width: 100%;
+  max-width: 1100px;
+  z-index: 2;
+}
+
+/* === Skill card === */
+.skill-card {
+  display: flex;
+  align-items: center;
+  background: rgba(20, 30, 60, 0.3);
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1rem 1.5rem;
+  backdrop-filter: blur(6px);
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.25);
+}
+
+/* === Skill image (SVG-friendly) === */
+.skill-image {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 255, 255, 0.05);
+  border: 2px solid rgba(0, 255, 255, 0.3);
+  border-radius: 12px;
+  margin-right: 1rem;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.skill-image img,
+.skill-image svg {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* Glow + float effect */
+.skill-card:hover .skill-image img,
+.skill-card:hover .skill-image svg {
+  filter: drop-shadow(0 0 8px #00ffff);
+  transform: translateY(-4px) rotate(4deg);
+}
+
+/* === Skill details === */
+.skill-details {
+  flex: 1;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.skill-header .percent {
+  color: #00ffff;
+  font-weight: 700;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00ffff, #007bff, #6b5bff);
+  box-shadow: 0 0 12px #00ffff;
+  border-radius: 4px;
+  transition: width 1s ease;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 2.2rem;
+  }
+
+  .about-text {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .skill-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 1.2rem;
+  }
+
+  .skill-image {
+    margin-right: 0;
+    margin-bottom: 0.8rem;
+  }
+
+  .skill-header {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+}

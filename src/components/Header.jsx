@@ -15,6 +15,15 @@ function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Smooth scroll function
+  const handleScrollTo = (id) => (e) => {
+    e.preventDefault();
+    const section = document.querySelector(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header className="header">
       <div className="logo">
@@ -23,10 +32,18 @@ function Header() {
         </a>
       </div>
       <nav className="buttons">
-        <a href="#About">About</a>
-        <a href="#Experience">Experience</a>
-        <a href="#Projects">Projects</a>
-        <a href="#Contact">Contact</a>
+        <a href="#about" onClick={handleScrollTo("#about")}>
+          About
+        </a>
+        <a href="#experience" onClick={handleScrollTo("#experience")}>
+          Certificates
+        </a>
+        <a href="#Projects" onClick={handleScrollTo("#Projects")}>
+          Projects
+        </a>
+        <a href="#Contact" onClick={handleScrollTo("#Contact")}>
+          Contact
+        </a>
       </nav>
     </header>
   );

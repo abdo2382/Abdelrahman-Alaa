@@ -27,7 +27,11 @@ function Header() {
   return (
     <header className="header">
       <div className="logo">
-        <a href="/" style={{ textDecoration: "none", color: "inherit" }}>
+        <a
+          href="#BackgroundSection"
+          onClick={handleScrollTo("#BackgroundSection")}
+          style={{ textDecoration: "none", color: "inherit" }}
+        >
           <h1>My Portfolio</h1>
         </a>
       </div>
@@ -38,7 +42,7 @@ function Header() {
         <a href="#experience" onClick={handleScrollTo("#experience")}>
           Certificates
         </a>
-        <a href="#Projects" onClick={handleScrollTo("#Projects")}>
+        <a href="#projects" onClick={handleScrollTo("#projects")}>
           Projects
         </a>
         <a href="#Contact" onClick={handleScrollTo("#Contact")}>

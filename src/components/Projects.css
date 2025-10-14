@@ -1,0 +1,135 @@
+.projects-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(circle at 30% 20%, #0a0f1f, #050811 80%);
+  color: #cdd6f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 4rem 2rem;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.projects-title {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #00ffff, #007bff, #6b5bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+  z-index: 2;
+  text-align: center;
+}
+
+.projects-text {
+  max-width: 700px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #a5baff;
+  margin-bottom: 3rem;
+  z-index: 2;
+  line-height: 1.6;
+}
+
+/* Grid layout for projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1100px;
+  z-index: 2;
+}
+
+/* Card style */
+.project-card {
+  background: rgba(20, 30, 60, 0.3);
+  border: 1px solid rgba(0, 255, 255, 0.1);
+  border-radius: 18px;
+  overflow: hidden;
+  backdrop-filter: blur(6px);
+  transition: all 0.35s ease;
+  position: relative;
+}
+
+.project-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.25);
+}
+
+/* Project image */
+.project-image img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(0, 255, 255, 0.15);
+}
+
+/* Project content */
+.project-content {
+  padding: 1.5rem;
+}
+
+.project-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.6rem;
+}
+
+.project-desc {
+  font-size: 1rem;
+  color: #a5baff;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+/* Buttons */
+.project-links {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.btn-project,
+.btn-project-outline {
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-project {
+  background: linear-gradient(90deg, #00ffff, #007bff, #6b5bff);
+  color: #000;
+}
+
+.btn-project-outline {
+  border: 2px solid #00ffff;
+  color: #00ffff;
+}
+
+.btn-project:hover,
+.btn-project-outline:hover {
+  filter: brightness(1.2);
+  transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .projects-title {
+    font-size: 2.2rem;
+  }
+
+  .projects-text {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .project-image img {
+    height: 180px;
+  }
+}

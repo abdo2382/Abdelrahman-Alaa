@@ -1,0 +1,29 @@
+/* ===== Modern Sleek Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(163, 181, 195, 0.2); /* semi-transparent track */
+  border-radius: 10px;
+  margin: 4px 0; /* small spacing */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(52, 152, 219, 0.7); /* slightly transparent blue */
+  border-radius: 10px;
+  border: 2px solid rgba(163, 181, 195, 0.2); /* adds padding effect */
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(52, 152, 219, 1); /* solid blue on hover */
+  transform: scale(1.1); /* subtle enlargement on hover */
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(52, 152, 219, 0.7) rgba(163, 181, 195, 0.2);
+}

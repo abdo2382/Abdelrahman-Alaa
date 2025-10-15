@@ -1,0 +1,202 @@
+/* === GLOBAL RESET === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background: #050811;
+}
+
+/* === CONTACT SECTION === */
+.contact-section {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  background: radial-gradient(circle at 30% 20%, #0a0f1f, #050811 70%);
+  overflow: hidden;
+}
+
+/* === Animated Glow Elements (same theme as background-section) === */
+.contact-section::before,
+.contact-section::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.35;
+  z-index: 0;
+}
+
+.contact-section::before {
+  background: #00ffff;
+  top: 10%;
+  left: 15%;
+  animation: float1 10s ease-in-out infinite alternate;
+}
+
+.contact-section::after {
+  background: #6b5bff;
+  bottom: 10%;
+  right: 15%;
+  animation: float2 12s ease-in-out infinite alternate;
+}
+
+@keyframes float1 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-25px);
+  }
+}
+
+@keyframes float2 {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(25px);
+  }
+}
+
+/* === Title & Text === */
+.contact-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #00ffff, #007bff, #6b5bff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.8rem;
+  z-index: 2;
+}
+
+.contact-text {
+  font-size: 1.2rem;
+  color: #a5baff;
+  max-width: 650px;
+  margin-bottom: 2.5rem;
+  z-index: 2;
+}
+
+/* === Contact Form === */
+.contact-form {
+  width: 100%;
+  max-width: 550px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  padding: 2rem;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.1);
+  z-index: 2;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 12px;
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 255, 0.25);
+  color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s ease;
+  resize: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #00ffff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #9fb3e6;
+}
+
+/* === Submit Button === */
+.btn-submit {
+  width: 100%;
+  background: linear-gradient(90deg, #00ffff, #007bff, #6b5bff);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  padding: 0.9rem;
+  cursor: pointer;
+  transition: 0.35s ease;
+}
+
+.btn-submit:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .contact-title {
+    font-size: 2rem;
+  }
+  .contact-text {
+    font-size: 1rem;
+  }
+  .contact-form {
+    padding: 1.5rem;
+  }
+}
+
+/* === Toastify Notification === */
+.toast-container {
+  z-index: 9999 !important;
+}
+
+.toastify {
+  background: linear-gradient(90deg, #00ffff, #007bff, #6b5bff);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+}
+
+.toastify__progress-bar {
+  background: linear-gradient(90deg, #00ffff, #007bff, #6b5bff);
+}
+
+.toastify__progress-bar--success {
+  background: linear-gradient(90deg, #00ffff, #007bff, #6b5bff);
+}
+
+.toastify__progress-bar--error {
+  background: linear-gradient(90deg, #00ffff, #007bff, #6b5bff);
+}
+
+.toastify__progress-bar--warning {
+  background: linear-gradient(90deg, #00ffff, #007bff, #6b5bff);
+}
+
+.toastify__progress-bar--info {
+  background: linear-gradient(90deg, #00ffff, #007bff, #6b5bff);
+}
